@@ -1,0 +1,29 @@
+{
+  "name": "kintone-api-plugin-uploader",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "kintone-api-plugin-uploader": "./dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc --noEmit && tsx esbuild.config.ts",
+    "startts": "export $(cat .local | xargs) && tsx ./src/cli.ts -f ./testdata/plugin.zip -i ./testdata/pluginId.txt",
+    "start": "export $(cat .local | xargs) && node ./dist/cli.js -f ./testdata/plugin.zip -i ./testdata/pluginId.txt"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "@types/yargs": "^17.0.33",
+    "esbuild": "^0.24.2",
+    "tsx": "^4.19.2",
+    "typescript": "~5.6.2"
+  },
+  "dependencies": {
+    "@kintone/rest-api-client": "^5.6.0",
+    "yargs": "^17.7.2"
+  }
+}

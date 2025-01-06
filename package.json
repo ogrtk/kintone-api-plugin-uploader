@@ -6,7 +6,7 @@
   "bin": {
     "kintone-api-plugin-uploader": "./dist/cli.js"
   },
-  "files": ["dist", "node_modules", "README.md"],
+  "files": ["dist", "README.md"],
   "scripts": {
     "check": "biome check",
     "build": "npm run check && tsc --noEmit && tsx esbuild.config.ts",

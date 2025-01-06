@@ -1,7 +1,7 @@
 {
   "name": "@ogrtk/kintone-api-plugin-uploader",
   "description": "Uplodes kintone plugin through kintone rest api",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "type": "module",
   "bin": {
     "kintone-api-plugin-uploader": "./dist/cli.js"
@@ -10,8 +10,8 @@
   "scripts": {
     "check": "biome check",
     "build": "npm run check && tsc --noEmit && tsx esbuild.config.ts",
-    "startts": "export $(cat .local | xargs) && tsx ./src/cli.ts -f ./testdata/plugin.zip -i ./testdata/pluginId.txt",
-    "start": "export $(cat .local | xargs) && node ./dist/cli.js -f ./testdata/plugin.zip -i ./testdata/pluginId.txt"
+    "test:ts": "export $(cat .local | xargs) && tsx ./src/cli.ts -f ./testdata/SAMPLE_conditionformat2_plugin_v3.2.7.zip -i ./testdata/pluginId.txt",
+    "test": "export $(cat .local | xargs) && node ./dist/cli.js -f ./testdata/SAMPLE_conditionformat2_plugin_v3.2.7.zip -i ./testdata/pluginId.txt"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
